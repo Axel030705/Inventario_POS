@@ -185,7 +185,7 @@ public class Login extends javax.swing.JFrame {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         try {
-            Desktop.getDesktop().browse(new URI("https://www.ejemplo.com"));
+            Desktop.getDesktop().browse(new URI("https://www.ejemplo.co"));
         } catch (Exception e) {
             e.printStackTrace();
         }
