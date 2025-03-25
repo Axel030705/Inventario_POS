@@ -5,6 +5,8 @@ import Administrador.Admin;
 import Avisos.Cerrar;
 import Conexion.Conexion_BD;
 import java.awt.Color;
+import java.awt.Desktop;
+import java.net.URI;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -117,6 +119,11 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Todos los derechos reservados ©");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -175,6 +182,14 @@ public class Login extends javax.swing.JFrame {
     private void Btn_ingresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_ingresarMouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_ingresarMouseEntered
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        try {
+            Desktop.getDesktop().browse(new URI("https://www.ejemplo.com"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     public void validarUsuario() {
         String User = "root", Password = "root";
