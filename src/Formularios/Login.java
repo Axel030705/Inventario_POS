@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.awt.Desktop;
 import java.net.URI;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalDate;
@@ -16,10 +17,11 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JFrame {
+
     LocalDate fechaActual = LocalDate.now();
     DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     String fechaString = fechaActual.format(formato);
-    
+
     Conexion.Conexion_BD cc = new Conexion_BD();
     Connection con = cc.getConnection();
     public String usuario;
@@ -193,35 +195,38 @@ public class Login extends javax.swing.JFrame {
 
     public void validarUsuario() {
         String User = "root", Password = "root";
-        int resultado = 0;
+        String usuario = usuario_txt.getText();
         String pass = String.valueOf(pass_txt.getPassword());
-        usuario = usuario_txt.getText();
-        String SQL = "select * from usuarios where Usuario= '" + usuario + "' and Contraseña= '" + pass + "' ";
+
+        // Si el usuario es "root", validar directamente
+        if (usuario.equals(User) && pass.equals(Password)) {
+            Admin sistemaAdmin = new Admin();
+            sistemaAdmin.setVisible(true);
+            this.dispose();
+            return; // Termina la ejecución aquí
+        }
+
+        // Si no es root, verificar en la base de datos con PreparedStatement
+        String SQL = "SELECT * FROM usuarios WHERE Usuario = ? AND Contraseña = ?";
 
         try {
-            Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery(SQL);
+            PreparedStatement pst = con.prepareStatement(SQL);
+            pst.setString(1, usuario);
+            pst.setString(2, pass);
 
-            if (usuario_txt.getText().equals(User) && pass_txt.getText().equals(Password)) {
-                Administrador.Admin SistemaAdministrador = new Admin();
-                SistemaAdministrador.setVisible(true);
+            ResultSet rs = pst.executeQuery();
+
+            if (rs.next()) {
+                Sistema form = new Sistema();
+                form.setVisible(true);
                 this.dispose();
+                form.LabelUsuario.setText(usuario);
+                form.LabelFecha.setText(fechaString);
             } else {
-                if (rs.next()) {
-                    resultado = 1;
-                    if (resultado == 1) {
-                        Sistema form = new Sistema();
-                        form.setVisible(true);
-                        this.dispose();
-                        form.LabelUsuario.setText(usuario_txt.getText());
-                        form.LabelFecha.setText(fechaString);
-                    }
-                } else {
-                    JOptionPane.showMessageDialog(null, "USUARIO NO REGISTRADO");
-                }
+                JOptionPane.showMessageDialog(null, "USUARIO NO REGISTRADO");
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "ERROR");
+            JOptionPane.showMessageDialog(null, "ERROR: " + e.getMessage());
         }
     }
 
