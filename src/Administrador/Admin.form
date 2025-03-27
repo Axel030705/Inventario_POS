@@ -50,7 +50,7 @@
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
             <LineBorder thickness="3">
-              <Color PropertyName="color" blue="99" green="99" red="0" type="rgb"/>
+              <Color PropertyName="color" blue="0" green="97" red="ff" type="rgb"/>
             </LineBorder>
           </Border>
         </Property>
@@ -62,9 +62,9 @@
               <Component id="PanelB" max="32767" attributes="0"/>
               <Group type="102" attributes="0">
                   <Component id="PanelD" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="124" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="Imagen" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -78,9 +78,9 @@
                           <Component id="PanelD" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
                           <Component id="Imagen" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="101" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="220" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -98,7 +98,7 @@
         <Container class="javax.swing.JPanel" name="PanelB">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="99" green="99" red="0" type="rgb"/>
+              <Color blue="0" green="97" red="ff" type="rgb"/>
             </Property>
           </Properties>
 
@@ -108,7 +108,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="Boton_Menu" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel1" max="32767" attributes="0"/>
+                      <Component id="jLabel1" pref="830" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -165,7 +165,7 @@
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder thickness="2">
-                  <Color PropertyName="color" blue="99" green="99" red="0" type="rgb"/>
+                  <Color PropertyName="color" blue="0" green="97" red="ff" type="rgb"/>
                 </LineBorder>
               </Border>
             </Property>
@@ -180,7 +180,7 @@
                           <Component id="Administrar" alignment="0" max="32767" attributes="0"/>
                           <Component id="Btn_Registrar_Menu" max="32767" attributes="0"/>
                           <Component id="Btn_Salir" alignment="0" max="32767" attributes="0"/>
-                          <Component id="Btn_Admin_Usuarios" alignment="1" pref="198" max="32767" attributes="0"/>
+                          <Component id="Btn_Admin_Usuarios" alignment="0" pref="284" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -190,13 +190,13 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Administrar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="Btn_Registrar_Menu" min="-2" max="-2" attributes="0"/>
+                      <Component id="Administrar" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="Btn_Salir" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                      <Component id="Btn_Admin_Usuarios" min="-2" max="-2" attributes="0"/>
+                      <Component id="Btn_Registrar_Menu" min="-2" pref="55" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="Btn_Admin_Usuarios" min="-2" pref="55" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="Btn_Salir" min="-2" pref="55" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -206,7 +206,7 @@
             <Component class="javax.swing.JLabel" name="Administrar">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="14" style="1"/>
+                  <Font name="Arial" size="24" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
@@ -230,7 +230,6 @@
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Cursor de Mano"/>
                 </Property>
-                <Property name="horizontalAlignment" type="int" value="10"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Btn_Registrar_MenuMouseEntered"/>
@@ -253,7 +252,6 @@
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Cursor de Mano"/>
                 </Property>
-                <Property name="horizontalAlignment" type="int" value="10"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Btn_SalirMouseEntered"/>
@@ -276,7 +274,6 @@
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Cursor de Mano"/>
                 </Property>
-                <Property name="horizontalAlignment" type="int" value="10"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Btn_Admin_UsuariosMouseEntered"/>

@@ -51,11 +51,11 @@ public class Admin extends javax.swing.JFrame {
         setUndecorated(true);
 
         Contenedor.setBackground(new java.awt.Color(255, 255, 255));
-        Contenedor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 3));
+        Contenedor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 151, 0), 3));
 
         Imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gerente.png"))); // NOI18N
 
-        PanelB.setBackground(new java.awt.Color(0, 153, 153));
+        PanelB.setBackground(new java.awt.Color(255, 151, 0));
 
         Boton_Menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/menu.png"))); // NOI18N
         Boton_Menu.setBorder(null);
@@ -78,7 +78,7 @@ public class Admin extends javax.swing.JFrame {
             .addGroup(PanelBLayout.createSequentialGroup()
                 .addComponent(Boton_Menu, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 830, Short.MAX_VALUE)
                 .addContainerGap())
         );
         PanelBLayout.setVerticalGroup(
@@ -91,9 +91,9 @@ public class Admin extends javax.swing.JFrame {
         );
 
         PanelD.setBackground(new java.awt.Color(255, 255, 255));
-        PanelD.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 2));
+        PanelD.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 151, 0), 2));
 
-        Administrar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        Administrar.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         Administrar.setForeground(new java.awt.Color(0, 0, 0));
         Administrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Administrar.setText("Administrar");
@@ -103,7 +103,6 @@ public class Admin extends javax.swing.JFrame {
         Btn_Registrar_Menu.setText("Registrar usuario");
         Btn_Registrar_Menu.setBorder(null);
         Btn_Registrar_Menu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Btn_Registrar_Menu.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         Btn_Registrar_Menu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Btn_Registrar_MenuMouseEntered(evt);
@@ -123,7 +122,6 @@ public class Admin extends javax.swing.JFrame {
         Btn_Salir.setText("Regresar al login");
         Btn_Salir.setBorder(null);
         Btn_Salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Btn_Salir.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         Btn_Salir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Btn_SalirMouseEntered(evt);
@@ -143,7 +141,6 @@ public class Admin extends javax.swing.JFrame {
         Btn_Admin_Usuarios.setText("Administrar usuarios");
         Btn_Admin_Usuarios.setBorder(null);
         Btn_Admin_Usuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Btn_Admin_Usuarios.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         Btn_Admin_Usuarios.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Btn_Admin_UsuariosMouseEntered(evt);
@@ -168,20 +165,20 @@ public class Admin extends javax.swing.JFrame {
                     .addComponent(Administrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Btn_Registrar_Menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Btn_Salir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Btn_Admin_Usuarios, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE))
+                    .addComponent(Btn_Admin_Usuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE))
                 .addContainerGap())
         );
         PanelDLayout.setVerticalGroup(
             PanelDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelDLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Administrar)
-                .addGap(18, 18, 18)
-                .addComponent(Btn_Registrar_Menu)
+                .addComponent(Administrar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Btn_Salir)
-                .addGap(12, 12, 12)
-                .addComponent(Btn_Admin_Usuarios)
+                .addComponent(Btn_Registrar_Menu, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Btn_Admin_Usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Btn_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -192,9 +189,9 @@ public class Admin extends javax.swing.JFrame {
             .addComponent(PanelB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(ContenedorLayout.createSequentialGroup()
                 .addComponent(PanelD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Imagen)
-                .addGap(88, 88, 88))
+                .addGap(36, 36, 36))
         );
         ContenedorLayout.setVerticalGroup(
             ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,9 +202,9 @@ public class Admin extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(PanelD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(ContenedorLayout.createSequentialGroup()
-                        .addGap(84, 84, 84)
+                        .addGap(165, 165, 165)
                         .addComponent(Imagen)
-                        .addGap(0, 101, Short.MAX_VALUE))))
+                        .addGap(0, 220, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -233,9 +230,9 @@ public class Admin extends javax.swing.JFrame {
     private void Boton_MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton_MenuActionPerformed
         int posicion = PanelD.getX();
         if (posicion == 0) {
-            Animacion.Animacion.mover_izquierda(0, -264, 2, 2, PanelD);
+            Animacion.Animacion.mover_izquierda(0, -310, 2, 2, PanelD);
         } else {
-            Animacion.Animacion.mover_derecha(-264, 0, 2, 2, PanelD);
+            Animacion.Animacion.mover_derecha(-284, 0, 2, 2, PanelD);
             PanelD.setVisible(true);
         }
 
@@ -244,7 +241,7 @@ public class Admin extends javax.swing.JFrame {
 
     private void Btn_Registrar_MenuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_Registrar_MenuMouseEntered
         Btn_Registrar_Menu.setContentAreaFilled(true);
-        Btn_Registrar_Menu.setBackground(new Color(0x09999));
+        Btn_Registrar_Menu.setBackground(new Color(0xFF9800));
         Btn_Registrar_Menu.setForeground(Color.white);
 
     }//GEN-LAST:event_Btn_Registrar_MenuMouseEntered
@@ -262,7 +259,7 @@ public class Admin extends javax.swing.JFrame {
 
     private void Btn_SalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_SalirMouseEntered
         Btn_Salir.setContentAreaFilled(true);
-        Btn_Salir.setBackground(new Color(0x09999));
+        Btn_Salir.setBackground(new Color(0xFF9800));
         Btn_Salir.setForeground(Color.white);
     }//GEN-LAST:event_Btn_SalirMouseEntered
 
@@ -279,7 +276,7 @@ public class Admin extends javax.swing.JFrame {
 
     private void Btn_Admin_UsuariosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn_Admin_UsuariosMouseEntered
         Btn_Admin_Usuarios.setContentAreaFilled(true);
-        Btn_Admin_Usuarios.setBackground(new Color(0x09999));
+        Btn_Admin_Usuarios.setBackground(new Color(0xFF9800));
         Btn_Admin_Usuarios.setForeground(Color.white);
     }//GEN-LAST:event_Btn_Admin_UsuariosMouseEntered
 
