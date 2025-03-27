@@ -12,7 +12,7 @@ public class Sistema extends javax.swing.JFrame {
 
     public Sistema() {
         setTitle("Inicio");
-        setSize(800, 550);
+        setSize(900, 650);
         //getContentPane().setBackground(new Color(0x0087FF));
         getContentPane().setBackground(Color.WHITE);
         setIconImage(new ImageIcon(getClass().getResource("")).getImage());
@@ -44,21 +44,23 @@ public class Sistema extends javax.swing.JFrame {
         btn_configuracion = new javax.swing.JLabel();
         btn_inventario = new javax.swing.JLabel();
         btn_entradas = new javax.swing.JLabel();
+        btn_ventas = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         setType(java.awt.Window.Type.UTILITY);
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(255, 151, 0));
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 22)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 25)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("INVENTARIO LIBRE");
+        jLabel1.setText("PIZZA DUCK");
 
         Btn_Info.setForeground(new java.awt.Color(255, 255, 255));
         Btn_Info.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/info.png"))); // NOI18N
         Btn_Info.setText("Info");
         Btn_Info.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        Btn_Info.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Btn_Info.setFocusable(false);
         Btn_Info.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Btn_Info.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -72,6 +74,7 @@ public class Sistema extends javax.swing.JFrame {
         Btn_Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/opcion-de-cerrar-sesion.png"))); // NOI18N
         Btn_Salir.setText("Salir");
         Btn_Salir.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        Btn_Salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Btn_Salir.setFocusable(false);
         Btn_Salir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Btn_Salir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -96,31 +99,29 @@ public class Sistema extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Btn_Salir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
-                            .addComponent(Btn_Info, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Btn_Salir, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
+                    .addComponent(Btn_Info, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
         Panel_Info_Usuario.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Nombre de Usuario:");
 
+        LabelUsuario.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         LabelUsuario.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel3.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Fecha de Ingreso:");
+
+        LabelFecha.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout Panel_Info_UsuarioLayout = new javax.swing.GroupLayout(Panel_Info_Usuario);
         Panel_Info_Usuario.setLayout(Panel_Info_UsuarioLayout);
@@ -130,23 +131,23 @@ public class Sistema extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LabelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(109, 109, 109)
+                .addComponent(LabelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
-                .addComponent(LabelFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LabelFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Panel_Info_UsuarioLayout.setVerticalGroup(
             Panel_Info_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(LabelUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(Panel_Info_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
-                .addComponent(LabelFecha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE))
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LabelFecha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btn_salidas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Salidas btn.png"))); // NOI18N
+        btn_salidas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Salidas.png"))); // NOI18N
         btn_salidas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_salidasMouseClicked(evt);
@@ -181,6 +182,13 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
 
+        btn_ventas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ventas.png"))); // NOI18N
+        btn_ventas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_ventasMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -188,18 +196,18 @@ public class Sistema extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(Panel_Info_Usuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(210, 210, 210)
-                .addComponent(btn_entradas)
-                .addGap(78, 78, 78)
-                .addComponent(btn_productos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(212, 212, 212))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(107, 107, 107)
-                .addComponent(btn_salidas)
-                .addGap(71, 71, 71)
-                .addComponent(btn_inventario)
-                .addGap(70, 70, 70)
-                .addComponent(btn_configuracion)
+                .addGap(115, 115, 115)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(btn_ventas)
+                    .addComponent(btn_salidas))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(btn_entradas)
+                    .addComponent(btn_inventario))
+                .addGap(115, 115, 115)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(btn_productos)
+                    .addComponent(btn_configuracion))
                 .addGap(102, 102, 102))
         );
         layout.setVerticalGroup(
@@ -208,16 +216,17 @@ public class Sistema extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Panel_Info_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_productos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_entradas, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_inventario)
+                .addGap(75, 75, 75)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(btn_ventas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_entradas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_productos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(btn_salidas)
+                    .addComponent(btn_inventario)
                     .addComponent(btn_configuracion))
-                .addGap(50, 50, 50))
+                .addGap(77, 77, 77))
         );
 
         pack();
@@ -248,12 +257,16 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_configuracionMouseClicked
 
     private void btn_inventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_inventarioMouseClicked
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btn_inventarioMouseClicked
 
     private void btn_entradasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_entradasMouseClicked
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btn_entradasMouseClicked
+
+    private void btn_ventasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ventasMouseClicked
+        
+    }//GEN-LAST:event_btn_ventasMouseClicked
 
     /**
      * @param args the command line arguments
@@ -301,6 +314,7 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel btn_inventario;
     private javax.swing.JLabel btn_productos;
     private javax.swing.JLabel btn_salidas;
+    private javax.swing.JLabel btn_ventas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
