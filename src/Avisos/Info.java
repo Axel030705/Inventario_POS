@@ -43,7 +43,7 @@ public class Info extends javax.swing.JFrame {
         setUndecorated(true);
         setType(java.awt.Window.Type.UTILITY);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Aviso Info.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Aviso Info (Restringido).png"))); // NOI18N
 
         LabelCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cerrar (1).png"))); // NOI18N
         LabelCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -78,8 +78,8 @@ public class Info extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(LabelCerrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();

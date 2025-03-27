@@ -17,7 +17,7 @@ public class Admin extends javax.swing.JFrame {
         //setSize(600,500);
         setLocationRelativeTo(null);
         getContentPane().setBackground(Color.white);
-        setIconImage(new ImageIcon(getClass().getResource("/Sistema_Administrador_Imagenes/administrador_.png")).getImage());
+        //setIconImage(new ImageIcon(getClass().getResource("/Sistema_Administrador_Imagenes/administrador_.png")).getImage());
         setTitle("Sistema Administrador");
         Boton_Menu.setContentAreaFilled(false);
         PanelD.setVisible(false);
