@@ -84,7 +84,7 @@ public class UsuariosRegistrados extends javax.swing.JFrame {
         setType(java.awt.Window.Type.UTILITY);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 3));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 151, 0), 3));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/grupo.png"))); // NOI18N
@@ -109,7 +109,7 @@ public class UsuariosRegistrados extends javax.swing.JFrame {
         TablaUsuarios.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(TablaUsuarios);
 
-        Btn_eliminar.setBackground(new java.awt.Color(0, 153, 153));
+        Btn_eliminar.setBackground(new java.awt.Color(255, 151, 0));
         Btn_eliminar.setForeground(new java.awt.Color(255, 255, 255));
         Btn_eliminar.setText("Eliminar usuario");
         Btn_eliminar.addActionListener(new java.awt.event.ActionListener() {

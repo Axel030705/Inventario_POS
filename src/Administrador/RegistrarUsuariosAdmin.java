@@ -39,7 +39,7 @@ public class RegistrarUsuariosAdmin extends javax.swing.JFrame {
         setType(java.awt.Window.Type.UTILITY);
 
         Panel1.setBackground(new java.awt.Color(255, 255, 255));
-        Panel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 3));
+        Panel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 151, 0), 3));
 
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -60,7 +60,7 @@ public class RegistrarUsuariosAdmin extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Confirmar:");
 
-        Btn_registrar.setBackground(new java.awt.Color(0, 153, 153));
+        Btn_registrar.setBackground(new java.awt.Color(255, 151, 0));
         Btn_registrar.setForeground(new java.awt.Color(255, 255, 255));
         Btn_registrar.setText("Registrar usuario");
         Btn_registrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
