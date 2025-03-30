@@ -2,7 +2,7 @@
 package Administrador;
 
 
-import Formularios.Login;
+import Formularios.Login_Viejo;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 
@@ -269,7 +269,7 @@ public class Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_SalirMouseExited
 
     private void Btn_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_SalirActionPerformed
-        Login login = new Login();
+        Login_Viejo login = new Login_Viejo();
         login.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Btn_SalirActionPerformed

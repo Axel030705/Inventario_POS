@@ -15,7 +15,7 @@ import java.time.format.DateTimeFormatter;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-public class Login extends javax.swing.JFrame {
+public class Login_Viejo extends javax.swing.JFrame {
 
     LocalDate fechaActual = LocalDate.now();
     DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -25,7 +25,7 @@ public class Login extends javax.swing.JFrame {
     Connection con = cc.getConnection();
     public String usuario;
 
-    public Login() {
+    public Login_Viejo() {
         setTitle("Login");
         //setSize(330, 523);
         setSize(888, 556);
@@ -240,7 +240,7 @@ public class Login extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login().setVisible(true);
+                new Login_Viejo().setVisible(true);
             }
         });
     }
