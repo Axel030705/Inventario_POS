@@ -11,6 +11,7 @@ public class Login_Nuevo extends javax.swing.JFrame {
     public Login_Nuevo() {
         setSize(1280, 800);
         setLocationRelativeTo(null);
+        setTitle("Inicia Sesión");
         initComponents();
     }
 
@@ -35,6 +36,8 @@ public class Login_Nuevo extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -82,7 +85,7 @@ public class Login_Nuevo extends javax.swing.JFrame {
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/boton_salir.png"))); // NOI18N
         jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel9.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(153, 153, 153));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Todos los derechos reservados ©");
