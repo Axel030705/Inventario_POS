@@ -5,7 +5,7 @@ import java.awt.Color;
 /* @author Axel */
 public class Splash_Screen extends javax.swing.JFrame {
 
-    private int progress = 0;
+    private final int progress = 0;
 
     public Splash_Screen() {
         setSize(1200, 800);

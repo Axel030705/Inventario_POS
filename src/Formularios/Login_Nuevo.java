@@ -1,7 +1,11 @@
 package Formularios;
 
 import java.awt.Desktop;
+import java.awt.Image;
+import java.io.IOException;
 import java.net.URI;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 /**
  * @author Axel
@@ -12,6 +16,14 @@ public class Login_Nuevo extends javax.swing.JFrame {
         setSize(1280, 800);
         setLocationRelativeTo(null);
         setTitle("Inicia Sesión");
+
+        try {
+            Image img = ImageIO.read(getClass().getResource("/img/Logo_Splash_Screen.png"));
+            setIconImage(img);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
         initComponents();
     }
 
