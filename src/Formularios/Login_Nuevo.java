@@ -272,25 +272,7 @@ public class Login_Nuevo extends javax.swing.JFrame {
             return;
         }
 
-        /* // Validar longitud mínima
-        if (usuario.length() < 4 || pass.length() < 4) {
-            JOptionPane.showMessageDialog(null, "El usuario y la contraseña deben tener al menos 4 caracteres.", "Longitud insuficiente", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        // Validar que no tenga espacios en medio
-        if (usuario.contains(" ") || pass.contains(" ")) {
-            JOptionPane.showMessageDialog(null, "El usuario y la contraseña no deben contener espacios.", "Espacios no permitidos", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        // (Opcional) Validar caracteres especiales si así lo deseas
-        if (!usuario.matches("^[a-zA-Z0-9._-]+$")) {
-            JOptionPane.showMessageDialog(null, "El nombre de usuario contiene caracteres no válidos.\nSolo se permiten letras, números, puntos, guiones y guiones bajos.", "Caracteres inválidos", JOptionPane.WARNING_MESSAGE);
-            return;
-        } */
-
-        // Validación directa si es usuario root
+        // Validación directa si es usuario root (sin ignorar mayúsculas/minúsculas)
         if (usuario.equals(User) && pass.equals(Password)) {
             Admin sistemaAdmin = new Admin();
             sistemaAdmin.setVisible(true);
@@ -298,22 +280,23 @@ public class Login_Nuevo extends javax.swing.JFrame {
             return;
         }
 
-        // Verificación con la base de datos
+        // Verificación con la base de datos (considerando mayúsculas/minúsculas)
         String SQL = "SELECT * FROM usuarios WHERE Usuario = ? AND Contraseña = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-            pst.setString(1, usuario);
+            pst.setString(1, usuario);  // Asegúrate de que el valor ingresado por el usuario se respete
             pst.setString(2, pass);
 
             ResultSet rs = pst.executeQuery();
 
             if (rs.next()) {
+                // Si el usuario existe, inicia sesión correctamente
                 Sistema_Nuevo form = new Sistema_Nuevo();
                 form.setVisible(true);
                 this.dispose();
-                //form.LabelUsuario.setText(usuario);
-                //form.LabelFecha.setText(fechaString);
+                form.LabelUsuario.setText(usuario);
+                form.LabelFecha.setText(fechaString);
             } else {
                 JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos.", "Acceso denegado", JOptionPane.ERROR_MESSAGE);
             }
