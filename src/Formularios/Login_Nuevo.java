@@ -1,16 +1,33 @@
 package Formularios;
 
+import Administrador.Admin;
+import Avisos.Cerrar;
+import Conexion.Conexion_BD;
 import java.awt.Desktop;
 import java.awt.Image;
 import java.io.IOException;
 import java.net.URI;
+import java.net.URISyntaxException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  * @author Axel
  */
 public class Login_Nuevo extends javax.swing.JFrame {
+
+    LocalDate fechaActual = LocalDate.now();
+    DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    String fechaString = fechaActual.format(formato);
+
+    Conexion.Conexion_BD cc = new Conexion_BD();
+    Connection con = cc.getConnection();
+    public String usuario;
 
     public Login_Nuevo() {
         setSize(1280, 800);
@@ -23,7 +40,7 @@ public class Login_Nuevo extends javax.swing.JFrame {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
+
         initComponents();
     }
 
@@ -37,14 +54,14 @@ public class Login_Nuevo extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txt_usuario = new javax.swing.JTextField();
+        usuario_txt = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        txt_password = new javax.swing.JPasswordField();
+        pass_txt = new javax.swing.JPasswordField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        btn_ingresar = new javax.swing.JLabel();
+        btn_salir = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -67,11 +84,11 @@ public class Login_Nuevo extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icono_candado.png"))); // NOI18N
 
-        txt_usuario.setBackground(new java.awt.Color(255, 255, 255));
-        txt_usuario.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        txt_usuario.setForeground(new java.awt.Color(153, 153, 153));
-        txt_usuario.setBorder(null);
-        txt_usuario.setOpaque(false);
+        usuario_txt.setBackground(new java.awt.Color(255, 255, 255));
+        usuario_txt.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        usuario_txt.setForeground(new java.awt.Color(153, 153, 153));
+        usuario_txt.setBorder(null);
+        usuario_txt.setOpaque(false);
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icono_linea.png"))); // NOI18N
@@ -79,10 +96,10 @@ public class Login_Nuevo extends javax.swing.JFrame {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icono_linea.png"))); // NOI18N
 
-        txt_password.setBackground(new java.awt.Color(255, 255, 255));
-        txt_password.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        txt_password.setForeground(new java.awt.Color(153, 153, 153));
-        txt_password.setBorder(null);
+        pass_txt.setBackground(new java.awt.Color(255, 255, 255));
+        pass_txt.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        pass_txt.setForeground(new java.awt.Color(153, 153, 153));
+        pass_txt.setBorder(null);
 
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel7.setText("Usuario:");
@@ -90,12 +107,22 @@ public class Login_Nuevo extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel8.setText("Contraseña:");
 
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/boton_iniciar.png"))); // NOI18N
-        jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_ingresar.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        btn_ingresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/boton_iniciar.png"))); // NOI18N
+        btn_ingresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_ingresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_ingresarMousePressed(evt);
+            }
+        });
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/boton_salir.png"))); // NOI18N
-        jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/boton_salir.png"))); // NOI18N
+        btn_salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_salir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_salirMousePressed(evt);
+            }
+        });
 
         jLabel9.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(153, 153, 153));
@@ -131,19 +158,19 @@ public class Login_Nuevo extends javax.swing.JFrame {
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txt_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(usuario_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addComponent(jLabel4)
                                     .addGap(18, 18, 18)
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txt_password, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(pass_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -153,7 +180,7 @@ public class Login_Nuevo extends javax.swing.JFrame {
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txt_usuario)
+                    .addComponent(usuario_txt)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
@@ -162,13 +189,13 @@ public class Login_Nuevo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txt_password, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pass_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addGap(57, 57, 57)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel12))
+                    .addComponent(btn_ingresar)
+                    .addComponent(btn_salir))
                 .addGap(69, 69, 69)
                 .addComponent(jLabel9)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -217,14 +244,83 @@ public class Login_Nuevo extends javax.swing.JFrame {
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         try {
             Desktop.getDesktop().browse(new URI("https://axel030705.github.io/pages_pizza_duck.github.io/Licencia.html"));
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IOException | URISyntaxException e) {
         }
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel9MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MousePressed
 
     }//GEN-LAST:event_jLabel9MousePressed
+
+    private void btn_ingresarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ingresarMousePressed
+        validarUsuario();
+    }//GEN-LAST:event_btn_ingresarMousePressed
+
+    private void btn_salirMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_salirMousePressed
+        Cerrar cerrar = new Cerrar();
+        cerrar.setVisible(true);
+    }//GEN-LAST:event_btn_salirMousePressed
+
+    public void validarUsuario() {
+        String User = "root", Password = "root";
+        String usuario = usuario_txt.getText().trim();
+        String pass = String.valueOf(pass_txt.getPassword()).trim();
+
+        // Validar campos vacíos
+        if (usuario.isEmpty() || pass.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por favor, completa todos los campos.", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        /* // Validar longitud mínima
+        if (usuario.length() < 4 || pass.length() < 4) {
+            JOptionPane.showMessageDialog(null, "El usuario y la contraseña deben tener al menos 4 caracteres.", "Longitud insuficiente", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        // Validar que no tenga espacios en medio
+        if (usuario.contains(" ") || pass.contains(" ")) {
+            JOptionPane.showMessageDialog(null, "El usuario y la contraseña no deben contener espacios.", "Espacios no permitidos", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        // (Opcional) Validar caracteres especiales si así lo deseas
+        if (!usuario.matches("^[a-zA-Z0-9._-]+$")) {
+            JOptionPane.showMessageDialog(null, "El nombre de usuario contiene caracteres no válidos.\nSolo se permiten letras, números, puntos, guiones y guiones bajos.", "Caracteres inválidos", JOptionPane.WARNING_MESSAGE);
+            return;
+        } */
+
+        // Validación directa si es usuario root
+        if (usuario.equals(User) && pass.equals(Password)) {
+            Admin sistemaAdmin = new Admin();
+            sistemaAdmin.setVisible(true);
+            this.dispose();
+            return;
+        }
+
+        // Verificación con la base de datos
+        String SQL = "SELECT * FROM usuarios WHERE Usuario = ? AND Contraseña = ?";
+
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+            pst.setString(1, usuario);
+            pst.setString(2, pass);
+
+            ResultSet rs = pst.executeQuery();
+
+            if (rs.next()) {
+                Sistema_Nuevo form = new Sistema_Nuevo();
+                form.setVisible(true);
+                this.dispose();
+                //form.LabelUsuario.setText(usuario);
+                //form.LabelFecha.setText(fechaString);
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos.", "Acceso denegado", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al conectar con la base de datos:\n" + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
 
     /**
      * @param args the command line arguments
@@ -262,9 +358,9 @@ public class Login_Nuevo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel btn_ingresar;
+    private javax.swing.JLabel btn_salir;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -275,7 +371,7 @@ public class Login_Nuevo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField txt_password;
-    private javax.swing.JTextField txt_usuario;
+    private javax.swing.JPasswordField pass_txt;
+    private javax.swing.JTextField usuario_txt;
     // End of variables declaration//GEN-END:variables
 }

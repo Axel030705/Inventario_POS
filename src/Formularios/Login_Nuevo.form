@@ -122,7 +122,7 @@
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="jLabel7" max="32767" attributes="0"/>
                                               <Component id="jLabel5" max="32767" attributes="0"/>
-                                              <Component id="txt_usuario" min="-2" pref="349" max="-2" attributes="0"/>
+                                              <Component id="usuario_txt" min="-2" pref="349" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
@@ -130,7 +130,7 @@
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="jLabel6" max="32767" attributes="0"/>
-                                              <Component id="txt_password" min="-2" pref="350" max="-2" attributes="0"/>
+                                              <Component id="pass_txt" min="-2" pref="350" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -139,9 +139,9 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel11" min="-2" pref="270" max="-2" attributes="0"/>
+                              <Component id="btn_ingresar" min="-2" pref="270" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jLabel12" min="-2" pref="270" max="-2" attributes="0"/>
+                              <Component id="btn_salir" min="-2" pref="270" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -155,7 +155,7 @@
                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="txt_usuario" max="32767" attributes="0"/>
+                          <Component id="usuario_txt" max="32767" attributes="0"/>
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -165,14 +165,14 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jLabel4" max="32767" attributes="0"/>
-                          <Component id="txt_password" min="-2" pref="57" max="-2" attributes="0"/>
+                          <Component id="pass_txt" min="-2" pref="57" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_ingresar" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_salir" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
@@ -196,7 +196,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txt_usuario">
+            <Component class="javax.swing.JTextField" name="usuario_txt">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -229,7 +229,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JPasswordField" name="txt_password">
+            <Component class="javax.swing.JPasswordField" name="pass_txt">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -261,7 +261,7 @@
                 <Property name="text" type="java.lang.String" value="Contrase&#xf1;a:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel11">
+            <Component class="javax.swing.JLabel" name="btn_ingresar">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -271,8 +271,11 @@
                   <Color id="Cursor de Mano"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_ingresarMousePressed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel12">
+            <Component class="javax.swing.JLabel" name="btn_salir">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/img/boton_salir.png"/>
@@ -281,6 +284,9 @@
                   <Color id="Cursor de Mano"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_salirMousePressed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel9">
               <Properties>

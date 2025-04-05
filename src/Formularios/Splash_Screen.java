@@ -46,12 +46,14 @@ public class Splash_Screen extends javax.swing.JFrame {
     }
 
     private void openLoginForm() {
-        // Cerrar el Splash Screen
-        this.dispose();
-
+        
         // Abrir el formulario de Login (Login_Nuevo)
         Login_Nuevo loginForm = new Login_Nuevo();
         loginForm.setVisible(true);
+        
+        // Cerrar el Splash Screen
+        this.dispose();
+
     }
 
     @SuppressWarnings("unchecked")
