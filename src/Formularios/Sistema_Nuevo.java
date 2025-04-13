@@ -3,6 +3,7 @@ package Formularios;
 //Realizado por Axel Onofre
 import Avisos.Cerrar;
 import Avisos.Info;
+import Formularios.Ordenes.TomarOdenes;
 import java.awt.Color;
 import java.awt.Image;
 import java.io.IOException;
@@ -151,6 +152,11 @@ public class Sistema_Nuevo extends javax.swing.JFrame {
         btn_ordenes.setBorderPainted(false);
         btn_ordenes.setContentAreaFilled(false);
         btn_ordenes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_ordenes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_ordenesMousePressed(evt);
+            }
+        });
 
         btn_productos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Productos_1.png"))); // NOI18N
         btn_productos.setBorder(null);
@@ -393,6 +399,12 @@ public class Sistema_Nuevo extends javax.swing.JFrame {
         Info info = new Info();
         info.setVisible(true);
     }//GEN-LAST:event_Btn_Panel_InfoMousePressed
+
+    private void btn_ordenesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ordenesMousePressed
+        TomarOdenes o = new TomarOdenes();
+        o.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_ordenesMousePressed
 
     /**
      * @param args the command line arguments
