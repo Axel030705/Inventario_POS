@@ -101,6 +101,9 @@ public class Splash_Screen extends javax.swing.JFrame {
         );
 
         progressBar.setBorder(null);
+        progressBar.setBorderPainted(false);
+        progressBar.setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
+        progressBar.setOpaque(false);
 
         progressLabel.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         progressLabel.setForeground(new java.awt.Color(0, 0, 0));

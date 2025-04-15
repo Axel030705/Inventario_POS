@@ -1,20 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+// Axel Onofre
+
 package Formularios.Ordenes;
 
-/**
- *
- * @author Axel
- */
+import java.awt.Color;
+
+
 public class TomarOdenes extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TomarOdenes
-     */
+    
+    
     public TomarOdenes() {
+        setSize(1500, 900);
+        setLocationRelativeTo(null);
+        getContentPane().setBackground(Color.WHITE);
         initComponents();
     }
 
@@ -27,17 +25,79 @@ public class TomarOdenes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        PanelSuperior = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        Panel_superior_ventas = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tomar Ordenes");
+        setUndecorated(true);
+        setResizable(false);
+
+        PanelSuperior.setBackground(new java.awt.Color(255, 255, 255));
+        PanelSuperior.setPreferredSize(new java.awt.Dimension(1500, 138));
+        PanelSuperior.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/TomarOrdenes_PanelSuperior/Logo_ventas.png"))); // NOI18N
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel1.setPreferredSize(new java.awt.Dimension(113, 113));
+        PanelSuperior.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 3, 113, 130));
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/TomarOrdenes_PanelSuperior/Texto_ventas.png"))); // NOI18N
+        PanelSuperior.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 158, 140));
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/TomarOrdenes_PanelSuperior/Boton_pizzas.png"))); // NOI18N
+        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PanelSuperior.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, -1, 140));
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/TomarOrdenes_PanelSuperior/Boton_combos.png"))); // NOI18N
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PanelSuperior.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 0, -1, 140));
+
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/TomarOrdenes_PanelSuperior/Boton_bebidas.png"))); // NOI18N
+        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PanelSuperior.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 0, -1, 140));
+
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/TomarOrdenes_PanelSuperior/Boton_otras_comidas.png"))); // NOI18N
+        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PanelSuperior.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 0, -1, 140));
+
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/TomarOrdenes_PanelSuperior/Boton_rebanadas.png"))); // NOI18N
+        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PanelSuperior.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, -1, 140));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/TomarOrdenes_PanelSuperior/Boton salir.png"))); // NOI18N
+        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PanelSuperior.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 0, 130, 140));
+
+        Panel_superior_ventas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/TomarOrdenes_PanelSuperior/Panel_superior_ventas.png"))); // NOI18N
+        PanelSuperior.add(Panel_superior_ventas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1500, Short.MAX_VALUE)
+            .addComponent(PanelSuperior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(PanelSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 754, Short.MAX_VALUE))
         );
 
         pack();
@@ -79,5 +139,15 @@ public class TomarOdenes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel PanelSuperior;
+    private javax.swing.JLabel Panel_superior_ventas;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     // End of variables declaration//GEN-END:variables
 }
