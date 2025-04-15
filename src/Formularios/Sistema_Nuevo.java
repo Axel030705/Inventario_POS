@@ -3,7 +3,7 @@ package Formularios;
 //Realizado por Axel Onofre
 import Avisos.Cerrar;
 import Avisos.Info;
-import Formularios.Ordenes.TomarOdenes;
+import Formularios.Ordenes.TomarOrdenes;
 import java.awt.Color;
 import java.awt.Image;
 import java.io.IOException;
@@ -401,7 +401,7 @@ public class Sistema_Nuevo extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_Panel_InfoMousePressed
 
     private void btn_ordenesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ordenesMousePressed
-        TomarOdenes o = new TomarOdenes();
+        TomarOrdenes o = new TomarOrdenes();
         o.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_ordenesMousePressed
