@@ -4,6 +4,9 @@ package Administrador;
 
 import Formularios.Login_Viejo;
 import java.awt.Color;
+import java.awt.Image;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
 /**
@@ -13,11 +16,18 @@ import javax.swing.ImageIcon;
 public class Admin extends javax.swing.JFrame {
 
     public Admin() {
+        
+        //Poner imagen como icono 
+        try {
+            Image img = ImageIO.read(getClass().getResource("/img/Logo_Splash_Screen.png"));
+            setIconImage(img);
+        } catch (IOException e) {
+        }
+        
         initComponents();
         //setSize(600,500);
         setLocationRelativeTo(null);
         getContentPane().setBackground(Color.white);
-        //setIconImage(new ImageIcon(getClass().getResource("/Sistema_Administrador_Imagenes/administrador_.png")).getImage());
         setTitle("Sistema Administrador");
         Boton_Menu.setContentAreaFilled(false);
         PanelD.setVisible(false);

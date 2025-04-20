@@ -1,16 +1,25 @@
 package Avisos;
 
 import java.awt.Color;
+import java.awt.Image;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
 public class ProductosAviso extends javax.swing.JFrame {
 
     public ProductosAviso() {
-        setTitle("Productos");
+        
+        //Poner imagen como icono 
+        try {
+            Image img = ImageIO.read(getClass().getResource("/img/Logo_Splash_Screen.png"));
+            setIconImage(img);
+        } catch (IOException e) {
+        }
+        
+        setTitle("Productos.");
         setSize(300, 180);
-        //getContentPane().setBackground(new Color(0x0087FF));
         getContentPane().setBackground(Color.WHITE);
-        setIconImage(new ImageIcon(getClass().getResource("")).getImage());
         setLocationRelativeTo(null);
         initComponents();
     }

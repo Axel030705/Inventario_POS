@@ -2,18 +2,28 @@ package Administrador;
 
 import Conexion.Conexion_BD;
 import java.awt.Color;
+import java.awt.Image;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class RegistrarUsuariosAdmin extends javax.swing.JFrame {
 
     public RegistrarUsuariosAdmin() {
+        
+        //Poner imagen como icono 
+        try {
+            Image img = ImageIO.read(getClass().getResource("/img/Logo_Splash_Screen.png"));
+            setIconImage(img);
+        } catch (IOException e) {
+        }
+        
         initComponents();
         //setSize(435, 500);
         setLocationRelativeTo(null);
         getContentPane().setBackground(Color.white);
-        setIconImage(new ImageIcon(getClass().getResource("")).getImage());
-        setTitle("Registrar Usuario");
+        setTitle("Registrar Usuario.");
         
         Btn_registrar.setBorderPainted(false);
         Btn_cancelar.setBorderPainted(false);

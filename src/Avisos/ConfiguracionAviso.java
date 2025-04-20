@@ -1,28 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Avisos;
 
 import java.awt.Color;
+import java.awt.Image;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
-/**
- *
- * @author Axel
- */
+
 public class ConfiguracionAviso extends javax.swing.JFrame {
 
     /**
      * Creates new form ConfiguracionAviso
      */
     public ConfiguracionAviso() {
+        
+        //Poner imagen como icono 
+        try {
+            Image img = ImageIO.read(getClass().getResource("/img/Logo_Splash_Screen.png"));
+            setIconImage(img);
+        } catch (IOException e) {
+        }
+        
         setTitle("Configuracion");
         setSize(300, 180);
-        //getContentPane().setBackground(new Color(0x0087FF));
         getContentPane().setBackground(Color.WHITE);
-        setIconImage(new ImageIcon(getClass().getResource("")).getImage());
         setLocationRelativeTo(null);
         initComponents();
     }

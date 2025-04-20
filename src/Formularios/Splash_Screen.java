@@ -1,11 +1,22 @@
 package Formularios;
 
 import java.awt.Color;
+import java.awt.Image;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 
 /* @author Axel */
 public class Splash_Screen extends javax.swing.JFrame {
 
     public Splash_Screen() {
+        
+        //Poner imagen como icono 
+        try {
+            Image img = ImageIO.read(getClass().getResource("/img/Logo_Splash_Screen.png"));
+            setIconImage(img);
+        } catch (IOException e) {
+        }
+        
         setSize(1200, 800);
         setLocationRelativeTo(null);
         setUndecorated(true);

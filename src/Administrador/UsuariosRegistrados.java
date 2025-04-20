@@ -3,23 +3,32 @@ package Administrador;
 
 import Conexion.Conexion_BD;
 import java.awt.Color;
+import java.awt.Image;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import javax.swing.ImageIcon;
+import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class UsuariosRegistrados extends javax.swing.JFrame {
 
     public UsuariosRegistrados() {
+        
+        //Poner imagen como icono 
+        try {
+            Image img = ImageIO.read(getClass().getResource("/img/Logo_Splash_Screen.png"));
+            setIconImage(img);
+        } catch (IOException e) {
+        }
+        
         initComponents();
         //setSize(500, 500);
         setLocationRelativeTo(null);
         getContentPane().setBackground(Color.white);
-        setIconImage(new ImageIcon(getClass().getResource("")).getImage());
         setTitle("Usuarios Existentes");
         
         //UI

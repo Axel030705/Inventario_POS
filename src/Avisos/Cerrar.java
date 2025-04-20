@@ -1,14 +1,24 @@
 package Avisos;
-/**
- *
- * @author Axel
- */
+
+import java.awt.Image;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+
+
 public class Cerrar extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Cerrar
-     */
+
+    
+    
     public Cerrar() {
+        
+        //Poner imagen como icono 
+        try {
+            Image img = ImageIO.read(getClass().getResource("/img/Logo_Splash_Screen.png"));
+            setIconImage(img);
+        } catch (IOException e) {
+        }
+        
         initComponents();
         setSize(380, 230);
         setLocationRelativeTo(null);
